@@ -76,7 +76,12 @@ function Badge({ children, color = "var(--accent)" }) {
   );
 }
 
-function Card({ children, style = {}, onClick, className = "" }) {
+function Card({ children, style = {}, onClick = undefined, className = "" }: {
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+  onClick?: () => void;
+  className?: string;
+}) {
   const [hov, setHov] = useState(false);
   return (
     <div
