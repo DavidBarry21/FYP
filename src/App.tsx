@@ -238,11 +238,13 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const style = document.createElement("style");
-    style.textContent = globalStyle;
-    document.head.appendChild(style);
-    return () => document.head.removeChild(style);
-  }, []);
+  const style = document.createElement("style");
+  style.textContent = globalStyle;
+  document.head.appendChild(style);
+  return () => {
+    document.head.removeChild(style);
+  };
+}, []);
 
   return (
     <div
